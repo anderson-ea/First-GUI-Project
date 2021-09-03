@@ -9,15 +9,18 @@ Builder.load_file('hangman.kv')
 
 WORDLIST_FILENAME = 'hangwords.txt'
 
+#returns list of 5,000+ words
 def load_words():
     inFile = open(WORDLIST_FILENAME, 'r')
     line = inFile.readline()
     wordlist = line.upper().split()
     return wordlist
 
+#randomly chooses a word from word list
 def choose_word(wordlist):
     return random.choice(wordlist)
 
+#returns the word displayed on GUI
 def getGuessedWord(secretWord, lettersGuessed):
     display_word = secretWord
     for y in secretWord:
@@ -28,26 +31,25 @@ def getGuessedWord(secretWord, lettersGuessed):
 allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 wordlist = load_words()
 
-class HangedMan(Widget):
-    def show_up(self):
-        pass
-
+#Widget to run the game
 class MyLayout(Widget):
     lettersGuessed = []
     guessesRemaining = 6
     secretWord = choose_word(wordlist)
 
+    #disables buttons and tells user the word they couldn't guess
     def endGame(self):
         for i in allLetters:
             self.ids[i].disabled = True
         print('you lose. the word was '+self.secretWord)
 
+    #function to disable button after pressed
     def disable(self, button):
         button.disabled = True
         button.background_normal = ''
         button.background_color = (.7, 0.0, 0.0, .6)
 
-
+    #Selects a new word and resets the board/number of guesses
     def new_word(self):
         self.secretWord = choose_word(wordlist)
         self.ids.the_word.text = getGuessedWord(self.secretWord, '')
@@ -56,8 +58,7 @@ class MyLayout(Widget):
         self.lettersGuessed = []
         self.guessesRemaining = 6
 
-
-
+    #checks the letter guessed to see if it is in the word
     def letter_check(self, button):
         self.lettersGuessed.append(button)
         if button in self.secretWord:
