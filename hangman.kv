@@ -1,0 +1,127 @@
+<Button>
+    background_normal: ''
+    background_color: (.7,0,0,.6)
+
+<MyLayout>
+
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        Label:
+            id: the_word
+            text: ''
+            font_size: 44
+
+        GridLayout:
+            cols: 9
+            rows: 3
+
+            Button:
+                id: A
+                text: 'A'
+                on_press: root.letter_check('A'), root.disable(A)
+            Button:
+                id: B
+                text: 'B'
+                on_press: root.letter_check('B'), root.disable(B)
+            Button:
+                id: C
+                text: 'C'
+                on_press: root.letter_check('C'), root.disable(C)
+            Button:
+                id: D
+                text: 'D'
+                on_press: root.letter_check('D'), root.disable(D)
+            Button:
+                id: E
+                text: 'E'
+                on_press: root.letter_check('E'), root.disable(E)
+            Button:
+                id: F
+                text: 'F'
+                on_press: root.letter_check('F'), root.disable(F)
+            Button:
+                id: G
+                text: 'G'
+                on_press: root.letter_check('G'), root.disable(G)
+            Button:
+                id: H
+                text: 'H'
+                on_press: root.letter_check('H'), root.disable(H)
+            Button:
+                id: I
+                text: 'I'
+                on_press: root.letter_check('I'), root.disable(I)
+            Button:
+                id: J
+                text: 'J'
+                on_press: root.letter_check('J'), root.disable(J)
+            Button:
+                id: K
+                text: 'K'
+                on_press: root.letter_check('K'), root.disable(K)
+            Button:
+                id: L
+                text: 'L'
+                on_press: root.letter_check('L'), root.disable(L)
+            Button:
+                id: M
+                text: 'M'
+                on_press: root.letter_check('M'), root.disable(M)
+            Button:
+                id: N
+                text: 'N'
+                on_press: root.letter_check('N'), root.disable(N)
+            Button:
+                id: O
+                text: 'O'
+                on_press: root.letter_check('O'), root.disable(O)
+            Button:
+                id: P
+                text: 'P'
+                on_press: root.letter_check('P'), root.disable(P)
+            Button:
+                id: Q
+                text: 'Q'
+                on_press: root.letter_check('Q'), root.disable(Q)
+            Button:
+                id: R
+                text: 'R'
+                on_press: root.letter_check('R'), root.disable(R)
+            Button:
+                id: S
+                text: 'S'
+                on_press: root.letter_check('S'), root.disable(S)
+            Button:
+                id: T
+                text: 'T'
+                on_press: root.letter_check('T'), root.disable(T)
+            Button:
+                id: U
+                text: 'U'
+                on_press: root.letter_check('U'), root.disable(U)
+            Button:
+                id: V
+                text: 'V'
+                on_press: root.letter_check('V'), root.disable(V)
+            Button:
+                id: W
+                text: 'W'
+                on_press: root.letter_check('W'), root.disable(W)
+            Button:
+                id: X
+                text: 'X'
+                on_press: root.letter_check('X'), root.disable(X)
+            Button:
+                id: Y
+                text: 'Y'
+                on_press: root.letter_check('Y'), root.disable(Y)
+            Button:
+                id: Z
+                text: 'Z'
+                on_press: root.letter_check('Z'), root.disable(Z)
+            Button:
+                id: new_word
+                text: 'NEW\nWORD'
+                on_press: root.new_word()
